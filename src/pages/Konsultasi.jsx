@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { Link } from "react-router-dom";
+import bannerImage from "../assets/banner.png";
+import people1Image from "../assets/people1.png";
+import people2Image from "../assets/people2.png";
+import people3Image from "../assets/people3.png";
+import people4Image from "../assets/people4.png";
 
 function Konsultasi() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,18 +40,18 @@ function Konsultasi() {
       <aside className="w-1/4 p-5 flex flex-col items-center min-h-screen">
         <div
           className="w-full h-full bg-cover bg-no-repeat flex flex-col items-center p-5 mr-9 mt-14"
-          style={{ backgroundImage: "url('src/assets/banner.png')" }}
+          style={{ backgroundImage: `url(${bannerImage})` }}
         >
           <button className="w-full bg-white font-raleway font-bold text-xl py-5 px-4 mb-4 mt-48 ml-12 rounded-md">
             Konsultasi dengan Pakar
           </button>
           <button className="w-80 bg-bluebtn text-white font-raleway font-bold text-xl py-5 rounded-md">
-          <Link
-            to="/chatbot"
-            className="w-80 bg-bluebtn text-white font-raleway font-bold text-xl py-5 rounded-md text-center"
-          >
-            ChatBot WALET AI
-          </Link>
+            <Link
+              to="/chatbot"
+              className="w-80 bg-bluebtn text-white font-raleway font-bold text-xl py-5 rounded-md text-center"
+            >
+              ChatBot WALET AI
+            </Link>
           </button>
         </div>
       </aside>
@@ -109,7 +114,7 @@ function Konsultasi() {
               className="flex flex-col items-center w-60 mx-auto ml-36"
             >
               <img
-                src="src/assets/people1.png"
+                src={people1Image}
                 alt="Pak Fadli Sileuer"
                 className="w-full h-80 object-cover"
               />
@@ -125,7 +130,7 @@ function Konsultasi() {
               className="flex flex-col items-center w-60 mx-auto -ml-96"
             >
               <img
-                src="src/assets/people2.png"
+                src={people2Image}
                 alt="Pak Muh. Rayhan"
                 className="w-full h-80 object-cover"
               />
@@ -141,7 +146,7 @@ function Konsultasi() {
               className="flex flex-col items-center w-60  mx-auto  ml-36"
             >
               <img
-                src="src/assets/people3.png"
+                src={people3Image}
                 alt="Pak Rizky Andika"
                 className="w-full h-80 object-cover"
               />
@@ -157,7 +162,7 @@ function Konsultasi() {
               className="flex flex-col items-center w-60  mx-auto -ml-96"
             >
               <img
-                src="src/assets/people4.png"
+                src={people4Image}
                 alt="Pak Ahmad Hidayat"
                 className="w-full h-80 object-cover"
               />
