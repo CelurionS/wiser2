@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import botIcon from "../assets/iconai.png";
+import userIcon from "../assets/user.png";
+import refreshIcon from "../assets/refresh.png";
+import sendIcon from "../assets/send.png";
+import chatbotBanner from "../assets/chatbotbanner.png";
+
 // Komponen MessageList untuk menampilkan daftar pesan
 function MessageList({ messages }) {
   return (
@@ -16,13 +22,13 @@ function MessageList({ messages }) {
         >
           {msg.sender === "bot" && (
             <img
-              src="src/assets/iconai.png"
+              src={botIcon}
               alt="Bot Icon"
               className="w-8 h-8 mr-3"
             />
           )}
           <div
-            className={`${
+            className={`$${
               msg.sender === "user"
                 ? "bg-bluebtn text-white"
                 : "bg-gray-200 text-gray-800"
@@ -32,7 +38,7 @@ function MessageList({ messages }) {
           </div>
           {msg.sender === "user" && (
             <img
-              src="src/assets/user.png"
+              src={userIcon}
               alt="User Icon"
               className="w-8 h-8 ml-3"
             />
@@ -65,7 +71,7 @@ function QuestionTemplates({
               className="text-gray-700 p-2 rounded-full"
             >
               <img
-                src="src/assets/refresh.png"
+                src={refreshIcon}
                 alt="Restart Icon"
                 className="w-6 h-6"
               />
@@ -95,7 +101,7 @@ function ChatInput({ input, setInput, handleSend }) {
         type="submit"
         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
       >
-        <img src="src/assets/send.png" alt="Send Icon" className="w-6 h-6" />
+        <img src={sendIcon} alt="Send Icon" className="w-6 h-6" />
       </button>
     </form>
   );
@@ -103,9 +109,7 @@ function ChatInput({ input, setInput, handleSend }) {
 
 // Komponen utama Ocobot
 function Ocobot() {
-  const [messages, setMessages] = useState([
-    
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
   const questionTemplates = [
@@ -214,14 +218,14 @@ function Ocobot() {
         <aside className="w-1/4 p-5 flex flex-col items-center h-full">
           <div
             className="w-full h-full bg-cover bg-no-repeat flex flex-col items-center p-5 mr-9 mt-14"
-            style={{ backgroundImage: "url('src/assets/chatbotbanner.png')" }}
+            style={{ backgroundImage: `url(${chatbotBanner})` }}
           >
             <button>
               <Link
                 to="/konsultasi"
                 className="w-80 bg-bluebtn text-white font-raleway font-bold text-xl py-5 mt-48 mr-6 rounded-md flex items-center justify-center"
               >
-                Konsultasi dengan Pakar
+                Konsultasi dengan Pakar
               </Link>
             </button>
             <button className="w-full bg-white font-raleway font-bold text-xl py-5 px-4 mb-4 mt-2 ml-12 rounded-md">
