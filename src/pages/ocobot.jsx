@@ -28,7 +28,7 @@ function MessageList({ messages }) {
             />
           )}
           <div
-            className={`$${
+            className={`${
               msg.sender === "user"
                 ? "bg-bluebtn text-white"
                 : "bg-gray-200 text-gray-800"
